@@ -13,4 +13,40 @@
  *= require_tree .
  *= require_self
  */
-@import "materialize";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body{
+  background: #fafafa;
+}
+
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+  float:none;
+}
+
+td {
+  width: 24%;
+}
+
+.form-control {
+  margin-top: 10px;
+}
+
+.input-group .form-control{
+    margin: 0px !important;
+}
+
+.media {
+  background: white;
+}
+
+.navbar {
+  background: white;
+}

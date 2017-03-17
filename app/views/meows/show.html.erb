@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>  <%= @meow.user.email %> </strong>
+</p>
+
+<p>
+<%= @meow.content %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_meow_path(@meow) %> |
+<%= link_to 'Back', meows_path %>

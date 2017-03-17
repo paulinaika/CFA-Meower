@@ -1,0 +1,23 @@
+<%= form_for(meow) do |f| %>
+  <% if meow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meow.errors.count, "error") %> prohibited this meow from being saved:</h2>
+
+      <ul>
+      <% meow.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

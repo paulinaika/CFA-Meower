@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><%= current_user.email %></h4>
+                </div>
+                <div class="panel-body">
+                    <p>Name: Cat</p>
+                    <p>No of meows</p>
+                    <p>No of Purrs</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">@</span>
+                <input type="text" class="form-control" placeholder="Meow. What's Meowing?" aria-describedby="sizing-addon1" maxlength="140">
+            </div>
+            <h1>Meows</h1>
+            <% @meows.each do |meow| %>
+            <div class="media">
+                <div class="media-body">
+                    <h4 class="media-heading"><%= meow.user.email %></h4>
+                    <p><%= meow.content %></p>
+                </div>
+
+                <div class="embed-responsive embed-responsive-4by3 media-bottom">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com"></iframe>
+                </div>
+                <%= link_to (current_user.follows?(meow.user) ? 'Unfollow' : 'Follow'), toggle_follow_path(user_id: meow.user_id)%>
+                <%= link_to (current_user.likes?(meow) ? 'Unlike' : 'Like'), toggle_like_path(user_id: meow)%>
+
+                <!-- <div class="media-top media-left">
+                    <a href="#"><img class="media-object" src="..." alt="..."></a>
+                </div> -->
+            </div>
+            <% end %>
+        </div>
+
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">14</span>
+                    Meower
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">5</span>
+                    Re-Meow
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">100</span>
+                    Purss
+                </li>
+            </ul>
+
+        </div>
+    </div>
